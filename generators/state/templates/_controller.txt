@@ -1,0 +1,16 @@
+/**
+ * Created by emugisha on 5/16/2016.
+ */
+(function () {
+  'use strict';
+
+  angular
+    .module('<%= appName%>.state.<%= data.state%>',[])
+    .controller('<%= controllerName%>', <%= data.state%>Controller);
+
+  function <%= data.state%>Controller() {
+
+    var vm = this;
+
+  }
+}());
