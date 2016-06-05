@@ -1,13 +1,14 @@
 /**
- * Created by emugisha on 5/16/2016.
+ * Created by emugisha
  */
 (function () {
   'use strict';
 
   angular
-    .module('<%= appName%>.state.<%= data.state%>',[])
+    .module('<%= appName%>.states.<%= data.state%>')
     .controller('<%= controllerName%>', <%= data.state%>Controller);
 
+   /* @ngInject */
   function <%= data.state%>Controller() {
 
     var vm = this;

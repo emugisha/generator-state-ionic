@@ -44,6 +44,7 @@ module.exports = yeoman.Base.extend({
       this.templatePath('config.js'),
       this.destinationPath('www/states/'+state+'/'+state+'.config.js'),
       {data:this.data,
+        controllerName: _s.capitalize(state,true)+'Controller',
         appName:this.appname}
     );
 
@@ -58,7 +59,7 @@ module.exports = yeoman.Base.extend({
     //test file
     this.fs.copyTpl(
       this.templatePath('_spec.js'),
-      this.destinationPath('www/states/'+state+'/'+state+'.spec.js'),
+      this.destinationPath('www/states/'+state+'/'+state+'.controller.spec.js'),
       {data:this.data,
         appName:this.appname}
     );
@@ -68,9 +69,5 @@ module.exports = yeoman.Base.extend({
     utils.addToIndexHtmlFile(state,'.controller.spec.js')
     utils.addNewModule('www/app.modules.js','ionic',this.appname+'.states.'+state);
 
-  },
-
-  install: function () {
-    this.installDependencies();
   }
 });
