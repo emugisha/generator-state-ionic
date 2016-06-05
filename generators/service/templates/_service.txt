@@ -1,0 +1,30 @@
+/**
+ * Created by emugisha
+ */
+(function () {
+  'use strict';
+
+  angular
+    .module('<%= appName%>.services.<%= data.service%>',[])
+    .factory('<%= serviceName%>', <%= data.service%>Service);
+
+   /* @ngInject */
+  function <%= data.service%>Service() {
+
+    var service = {
+        method1 : method1,
+        method2 : method2
+    };
+
+    return service;
+
+    function method1(){
+
+    }
+
+    function method2(){
+
+    }
+
+  }
+}());
